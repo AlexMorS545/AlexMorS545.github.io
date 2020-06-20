@@ -231,7 +231,7 @@
         <button class="projects-card-btn">load more</button>
       </section>
       <section class="video">
-        <video class="video-bg" src="video/video-bg.mp4" width="1920" height="705" poster="img/poster.jpg"></video>
+        <video id="video" class="video-bg" src="video/video-bg.mp4" width="1920" height="705" poster="img/poster.jpg"></video>
         <div class="video-wrap">
           <button class="video-btn">
             <svg class="video-btn-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70">
@@ -407,5 +407,17 @@
       </section>
     </footer>
   </div>
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <script>
+    var video = document.querySelector("#video"),
+        button = document.querySelector(".video-btn");
+    button.addEventListener("click", function() {
+      video.play()
+      video.setAttribute("controls","controls");
+    }, false);
+    $(".video-btn").click(function() {
+      $(".video-wrap").addClass('hide');
+    })
+  </script>
 </body>
 </html>
